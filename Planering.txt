@@ -1,0 +1,13 @@
+TollCalculator
+	
+	1. Definiera tidpunkter då fordonet paserar vägtullen
+	2. Skapa ett Car och MC objekt
+	3. Anropa TollCalculator klassen med fordonstyp och lista med tidpunkter
+	4. Loopa igenom lista med tidpunkter
+	5. Anropa metod som stämmer av om det är helgdag. Returnera 0kr om True.
+	6. Addera maxtaxa vid rusningstrafik för bil respektive MC
+	7. Addera normal taxa utanför rusningstrafik för bil repektive MC
+	8. Anropa metod som returnerar True om daglig maxtaxa har överskritids
+	9. Returnera daglig tullavgift om maxtaxa inte överskritids
+	
+	
