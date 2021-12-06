@@ -27,4 +27,18 @@ public class TollCalculator {
     private boolean isTollFreeDate(Date date) {
         return false;
     }
+    
+    // Skriv ut summering i terminalen
+    private void printTollFee(Vehicle vehicle, LocalDateTime[] dates, int totalFee) {
+        String dayOfWeek = dates[0].getDayOfWeek().toString();
+
+        System.out.println( "\n" + 
+                            "The daily fee for vehicle: " + vehicle.regNr + "\n" +
+                            "The type of vehicle being: " + vehicle.getType() + "\n" +
+                            "On the date and time(s):   " + Arrays.toString(dates) + "\n" +
+                            "On the day of week:        " + dayOfWeek + "\n" +
+                            "Is a total of:             " + totalFee + "kr" +
+                            "\n" );
+        
+    }
 }
