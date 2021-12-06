@@ -23,11 +23,12 @@ public class TollCalculator {
         return totalFee;
     }
     
-    //Räkna ut avgift för en bil en viss tid på dygnet
-    private boolean isTollFreeDate(Date date) {
-        return false;
-    }
-    
+    // Räkna ut om det är helgdag
+       
+
+    // Räkna ut om det är rusningstid
+        
+
     // Skriv ut summering i terminalen
     private void printTollFee(Vehicle vehicle, LocalDateTime[] dates, int totalFee) {
         String dayOfWeek = dates[0].getDayOfWeek().toString();
