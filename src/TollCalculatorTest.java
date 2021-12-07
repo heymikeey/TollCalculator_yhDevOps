@@ -42,4 +42,5 @@ public class TollCalculatorTest {
         Assertions.assertEquals(true, tollCalculator.isRushHour(rushHours));
         Assertions.assertEquals(false, tollCalculator.isRushHour(weekend));
 }
+
 }
