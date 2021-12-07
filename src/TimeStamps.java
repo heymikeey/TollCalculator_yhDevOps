@@ -23,6 +23,13 @@ public class TimeStamps {
         return dates;
 
     }
+    private static LocalDateTime[] camera3() {
+        LocalDateTime datetime1 = LocalDateTime.of(2021, 12, 2, 18, 23, 13);
+        LocalDateTime datetime2 = LocalDateTime.of(2021, 12, 2, 19, 2, 41);
+
+        LocalDateTime[] dates = {datetime1, datetime2};
+        return dates;
+    }
 
     public static LocalDateTime[] getCamera1() {
         return camera1();
@@ -30,5 +37,9 @@ public class TimeStamps {
 
     public static LocalDateTime[] getCamera2() {
         return camera2();
+    }
+
+    public static LocalDateTime[] getCamera3() {
+        return camera3();
     }
 }
