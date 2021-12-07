@@ -41,6 +41,17 @@ public class TollCalculatorTest {
 
         Assertions.assertEquals(true, tollCalculator.isRushHour(rushHours));
         Assertions.assertEquals(false, tollCalculator.isRushHour(weekend));
-}
+    }
+    
+    // Test av maxtaxering för bil samt MC
+    // Högsta dagliga avgiften får aldrig överskrida 60 kr
+    @Test
+    public void testTotalMaxFee() {
+        LocalDateTime[] mix = {nonRushHour, morningRushHour, nonRushHour, afternoonRushHour, nonRushHour, nonRushHour};
+        
+        Assertions.assertEquals(60, tollCalculator.getTotalTollFee(car, mix));  //Taxa för bil utan maxtak är 76kr
+        Assertions.assertEquals(60, tollCalculator.getTotalTollFee(mc, mix));   //Taxa för MC utan maxtak är 68kr
+        
+    }
 
 }
