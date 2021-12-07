@@ -35,14 +35,14 @@ public class TollCalculator {
 
 
     //  Räkna ut om det är helgdag
-    public boolean isTollFreeDate(LocalDateTime date) {
+    private boolean isTollFreeDate(LocalDateTime date) {
         return (date.getDayOfWeek().toString().equals("SATURDAY") ||
                 date.getDayOfWeek().toString().equals("SUNDAY"));
     }
        
 
     // Räkna ut om det är rusningstid
-    public boolean isRushHour(LocalDateTime date) {
+    private boolean isRushHour(LocalDateTime date) {
         return (date.getHour() == 8 || date.getHour() == 16);
     }
         
