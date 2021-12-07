@@ -4,6 +4,10 @@ public class Main {
 
         Vehicle car = new Car("xtv123");
         Vehicle mc = new Motorbike("rqt394");
+        
+        tollCalculator.getTotalTollFee(car, TimeStamps.getCamera3());
+        tollCalculator.getTotalTollFee(mc, TimeStamps. getCamera1());
+        tollCalculator.getTotalTollFee(car, TimeStamps. getCamera2());
 
 
     }
