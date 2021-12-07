@@ -2,6 +2,7 @@ import java.time.LocalDateTime;
 
 public class TimeStamps {
 
+    // kamera för tidpunkter under RushHour och normala tider. Totalen överskrider 60kr.
     private static LocalDateTime[] camera1() {
         LocalDateTime datetime1 = LocalDateTime.of(2021, 11, 30, 7, 10, 19);
         LocalDateTime datetime2 = LocalDateTime.of(2021, 11, 30, 16, 59, 9);
@@ -13,6 +14,7 @@ public class TimeStamps {
         LocalDateTime[] dates = {datetime1, datetime2, datetime3, datetime4, datetime5, datetime6};
         return dates;
     }
+    // kamera för tidpunkter på helgdag.
     private static LocalDateTime[] camera2() {
         LocalDateTime datetime1 = LocalDateTime.of(2021, 12, 4, 10, 10, 43);
         LocalDateTime datetime2 = LocalDateTime.of(2021, 12, 4, 11, 15, 9);
@@ -23,6 +25,7 @@ public class TimeStamps {
         return dates;
 
     }
+    // kamera för tidpunkter utanför rushHour.
     private static LocalDateTime[] camera3() {
         LocalDateTime datetime1 = LocalDateTime.of(2021, 12, 2, 18, 23, 13);
         LocalDateTime datetime2 = LocalDateTime.of(2021, 12, 2, 19, 2, 41);
@@ -31,6 +34,7 @@ public class TimeStamps {
         return dates;
     }
 
+    // Getters.
     public static LocalDateTime[] getCamera1() {
         return camera1();
     }
