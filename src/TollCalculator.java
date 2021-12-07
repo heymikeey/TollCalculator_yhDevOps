@@ -12,8 +12,15 @@ public class TollCalculator {
         this.maxTotal = 60;
     }
 
-    // Huvudmetod som räknar ut dagsavgift för en bil 
-    public int getTollFee(Vehicle vehicle, LocalDateTime[] dates) {
+    //  Räkna ut om det är helgdag
+    public boolean isTollFreeDate(LocalDateTime date) {
+        return (date.getDayOfWeek().toString().equals("SATURDAY") ||
+                date.getDayOfWeek().toString().equals("SUNDAY"));
+    }
+
+
+    // Huvudmetod som räknar ut dagsavgift för en bil
+    /*public int getTollFee(Vehicle vehicle, LocalDateTime[] dates) {
 
         int totalFee = 0;
 
@@ -22,6 +29,8 @@ public class TollCalculator {
         }
         return totalFee;
     }
+
+     */
     
     // Räkna ut om det är helgdag
        
@@ -30,16 +39,16 @@ public class TollCalculator {
         
 
     // Skriv ut summering i terminalen
-    private void printTollFee(Vehicle vehicle, LocalDateTime[] dates, int totalFee) {
-        String dayOfWeek = dates[0].getDayOfWeek().toString();
+    private void printTollFee(Vehicle vehicle, LocalDateTime[] dates, int totalFee){
+            String dayOfWeek = dates[0].getDayOfWeek().toString();
 
-        System.out.println( "\n" + 
-                            "The daily fee for vehicle: " + vehicle.regNr + "\n" +
-                            "The type of vehicle being: " + vehicle.getType() + "\n" +
-                            "On the date and time(s):   " + Arrays.toString(dates) + "\n" +
-                            "On the day of week:        " + dayOfWeek + "\n" +
-                            "Is a total of:             " + totalFee + "kr" +
-                            "\n" );
-        
+            System.out.println("\n" +
+                    "The daily fee for vehicle: " + vehicle.regNr + "\n" +
+                    "The type of vehicle being: " + vehicle.getType() + "\n" +
+                    "On the date and time(s):   " + Arrays.toString(dates) + "\n" +
+                    "On the day of week:        " + dayOfWeek + "\n" +
+                    "Is a total of:             " + totalFee + "kr" +
+                    "\n");
+
     }
 }
