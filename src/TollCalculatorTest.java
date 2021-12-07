@@ -32,4 +32,14 @@ public class TollCalculatorTest {
         Assertions.assertEquals(false, tollCalculator.isTollFreeDate(nonRushHour));
 
     }
+
+    // Test av maxtaxering för bil samt MC
+    // Rusningstrafik mellan (8:00 - 9:00) och (16:00-17:00) ger maxtaxa (18 kr)
+    @Test
+    public void testRushHourFee() {
+        LocalDateTime rushHours = morningRushHour, afternoonRushHour;
+
+        Assertions.assertEquals(true, tollCalculator.isRushHour(rushHours));
+        Assertions.assertEquals(false, tollCalculator.isRushHour(weekend));
+}
 }
