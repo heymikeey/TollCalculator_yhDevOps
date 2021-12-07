@@ -13,8 +13,22 @@ public class TimeStamps {
         LocalDateTime[] dates = {datetime1, datetime2, datetime3, datetime4, datetime5, datetime6};
         return dates;
     }
+    private static LocalDateTime[] camera2() {
+        LocalDateTime datetime1 = LocalDateTime.of(2021, 12, 4, 10, 10, 43);
+        LocalDateTime datetime2 = LocalDateTime.of(2021, 12, 4, 11, 15, 9);
+        LocalDateTime datetime3 = LocalDateTime.of(2021, 12, 4, 14, 31, 9);
+        LocalDateTime datetime4 = LocalDateTime.of(2021, 12, 4, 15, 47, 11);
+
+        LocalDateTime[] dates = {datetime1, datetime2, datetime3, datetime4};
+        return dates;
+
+    }
 
     public static LocalDateTime[] getCamera1() {
         return camera1();
+    }
+
+    public static LocalDateTime[] getCamera2() {
+        return camera2();
     }
 }
