@@ -9,7 +9,7 @@ public class TollCalculatorTest {
     LocalDateTime nonRushHour = LocalDateTime.of(2021, 12, 6, 10, 10, 19);
     LocalDateTime morningRushHour = LocalDateTime.of(2021, 12, 6, 8, 10, 19);
     LocalDateTime afternoonRushHour = LocalDateTime.of(2021, 12, 6, 16, 30, 0);
-    LocalDateTime[] weekend = {LocalDateTime.of(2021, 12, 5, 9, 15, 44)};
+    LocalDateTime weekend = LocalDateTime.of(2021, 12, 5, 9, 15, 44);
 
 
     // Test av normaltaxa av bil samt MC
@@ -22,6 +22,14 @@ public class TollCalculatorTest {
         Assertions.assertEquals(8, mc.getFee());
 
     }
-        
-    
+
+    // Test av helgtaxering för bil samt MC
+    // Lördagar och Söndagar är avgiftsfria
+    @Test
+    public void testWeekendFee() {
+
+        Assertions.assertEquals(true, tollCalculator.isTollFreeDate(weekend));
+        Assertions.assertEquals(false, tollCalculator.isTollFreeDate(nonRushHour));
+
+    }
 }
