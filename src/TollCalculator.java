@@ -36,6 +36,9 @@ public class TollCalculator {
        
 
     // Räkna ut om det är rusningstid
+    public boolean isRushHour(LocalDateTime date) {
+        return (date.getHour() == 8 || date.getHour() == 16);
+    }
         
 
     // Skriv ut summering i terminalen
