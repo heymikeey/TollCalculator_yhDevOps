@@ -9,7 +9,7 @@ public class TollCalculatorTest {
     LocalDateTime nonRushHour = LocalDateTime.of(2021, 12, 6, 10, 10, 19);
     LocalDateTime morningRushHour = LocalDateTime.of(2021, 12, 6, 8, 10, 19);
     LocalDateTime afternoonRushHour = LocalDateTime.of(2021, 12, 6, 16, 30, 0);
-    LocalDateTime weekend = LocalDateTime.of(2021, 12, 5, 9, 15, 44);
+    LocalDateTime[] weekend = {LocalDateTime.of(2021, 12, 5, 9, 15, 44)};
 
 
     // Test av normaltaxa av bil samt MC
@@ -28,8 +28,8 @@ public class TollCalculatorTest {
     @Test
     public void testWeekendFee() {
 
-        Assertions.assertEquals(true, tollCalculator.isTollFreeDate(weekend));
-        Assertions.assertEquals(false, tollCalculator.isTollFreeDate(nonRushHour));
+        Assertions.assertEquals(0, tollCalculator.getTotalTollFee(car, weekend));
+        Assertions.assertEquals(0, tollCalculator.getTotalTollFee(mc, weekend));
 
     }
 
@@ -37,10 +37,10 @@ public class TollCalculatorTest {
     // Rusningstrafik mellan (8:00 - 9:00) och (16:00-17:00) ger maxtaxa (18 kr)
     @Test
     public void testRushHourFee() {
-        LocalDateTime rushHours = morningRushHour, afternoonRushHour;
+        LocalDateTime[] rushHours = {morningRushHour, afternoonRushHour};
 
-        Assertions.assertEquals(true, tollCalculator.isRushHour(rushHours));
-        Assertions.assertEquals(false, tollCalculator.isRushHour(weekend));
+        Assertions.assertEquals(2*18, tollCalculator.getTotalTollFee(car, rushHours));
+        Assertions.assertEquals(2*18, tollCalculator.getTotalTollFee(mc, rushHours));
     }
     
     // Test av maxtaxering för bil samt MC
