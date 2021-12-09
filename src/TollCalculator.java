@@ -2,17 +2,11 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class TollCalculator {
-    private int maxFee;
-    private int weekendFee;
-    private int maxTotal;
+    private static int maxFee = 18;
+    private static int weekendFee = 0;
+    private static int maxTotal = 60;
+
     
-    public TollCalculator() {
-        this.maxFee = 18;
-        this.weekendFee = 0;
-        this.maxTotal = 60;
-    }
-
-
     // Huvudmetod som räknar ut dagsavgift för en bil
     public int getTotalTollFee(Vehicle vehicle, LocalDateTime[] dates) {
 
