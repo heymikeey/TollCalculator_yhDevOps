@@ -1,4 +1,5 @@
 # TollCalculator_yhDevOps
+Team members: Josip, Hannes, Mikael
 ## Info.
 This is a program that will calculate the the toll of vehicles. 
 Fees will differ between 8 SEK and 18 SEK, 
